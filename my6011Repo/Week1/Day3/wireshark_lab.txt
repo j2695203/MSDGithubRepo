@@ -1,0 +1,48 @@
+IP1: 10.17.162.125
+IP2: 10.17.148.100
+
+####Find out what your classmate's IPV4 address is.
+
+1. What data is being sent to the other computer?
+   08090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f3031323334353637
+
+2. what is the source address, the destination address? 
+   For request:
+	source address: 10.17.162.125
+	destination address: 10.17.148.100
+   For reply:
+	source address: 10.17.148.100 
+	destination address: 10.17.162.125
+
+
+3. how do the integer values compare with the ASCII that is displayed in the terminal? Does it match anything that we have seen before?
+   It matches Hex number to Character based on the ASCII. Ex.24->$
+
+4. How long does it take a ping packet to travel to your classmate's machine and back? 
+   11 packets transmitted, 11 packets received, 0.0% packet loss
+   round-trip min/avg/max/stddev = 7.476/28.703/85.312/27.298 ms
+
+
+5. Try ping google.com. How long does it take these ping packets to travel?  
+   11 packets transmitted, 11 packets received, 0.0% packet loss
+   round-trip min/avg/max/stddev = 19.559/25.883/42.709/9.116 ms
+
+6. Try ping www.louvre.fr. How long does this take? 
+   11 packets transmitted, 11 packets received, 0.0% packet loss
+   round-trip min/avg/max/stddev = 138.694/147.813/167.742/9.855 ms
+
+7. What do these numbers tell you?
+   It takes more time to connect the sever outside the country.
+
+#### HTTP
+
+1. Record with Wireshark while you open example.com in a web browser. Did you see more than you expected in the output? Can you figure out what other data was sent/received?
+   ????????????
+
+2. run curl example.com while Wireshark is recording. How are your results different / similar?
+   More lines are displayed on Wireshock when using curl other than browser
+
+3. What URL actually show's up when GitHub is loaded?
+   https://github.com
+
+4. Can you understand the output from Wireshark? Why can you only read the first couple of messages?
