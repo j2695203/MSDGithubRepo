@@ -62,6 +62,16 @@ class FractionTest {
     }
 
     @Test
+    void tryCatch(){
+        try{
+            Fraction f1 = new Fraction(3,0);
+        }
+        catch(ArithmeticException e){
+            System.out.println(e);
+        }
+    }
+
+    @Test
     public void runAllTests(){
 
     }

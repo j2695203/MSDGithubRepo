@@ -1,3 +1,4 @@
+import org.junit.platform.commons.function.Try;
 
 public class Fraction{
     private long numerator, denominator;
@@ -7,8 +8,12 @@ public class Fraction{
         denominator = 1;
     }
 
-    public Fraction(long n, long d){   // constructor
-        if ( d < 0){                   // let denominator be positive
+    // constructor
+    public Fraction(long n, long d){
+        if ( d == 0){
+            throw new ArithmeticException("denominator can't be zero");
+        }
+        else if ( d < 0){                   // let denominator be positive
             numerator = n * -1;
             denominator = d * -1;
         }else{
