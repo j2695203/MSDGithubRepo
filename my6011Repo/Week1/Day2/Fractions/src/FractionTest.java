@@ -1,6 +1,8 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+
 class FractionTest {
 
     @Test
@@ -72,7 +74,11 @@ class FractionTest {
     }
 
     @Test
-    public void runAllTests(){
-
+    public void compareTo(){
+        Fraction f1 = new Fraction(-2,3);
+        Fraction f2 = new Fraction(2,3);
+        Fraction f3 = new Fraction(1,3);
+        Assertions.assertEquals(-1,f3.compareTo(f2));
+        Assertions.assertEquals(1,f3.compareTo(f1));
     }
 }

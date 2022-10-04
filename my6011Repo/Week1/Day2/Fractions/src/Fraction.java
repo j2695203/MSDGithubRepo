@@ -1,7 +1,17 @@
 import org.junit.platform.commons.function.Try;
-
-public class Fraction{
+public class Fraction implements Comparable<Fraction>{
     private long numerator, denominator;
+
+    @Override
+    public int compareTo(Fraction rhs) {
+        if ( this.toDouble() > rhs.toDouble() ){
+            return 1;
+        }else if ( this.toDouble() < rhs.toDouble() ){
+            return -1;
+        }else{
+            return 0;
+        }
+    }
 
     public Fraction(){                 // constructor
         numerator = 0;
@@ -102,4 +112,6 @@ public class Fraction{
         numerator /= gcd;
         denominator /= gcd;
     }
+
+
 }
