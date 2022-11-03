@@ -32,12 +32,18 @@ function handleSendWsMessageCB( event ) {
     // save JSON object into a variable
     let serverMsg = JSON.parse(event.data);
 
+    // display time with every message
+    let d = new Date();
+    let h = d.getHours();
+    let m = d.getMinutes();
+    let s = d.getSeconds();
+
     // handle join event
     if( serverMsg.type == "join" ){
         let pUser = document.createElement("p");
         let pMsg = document.createElement("p");
         pUser.textContent = ( serverMsg.user );
-        pMsg.textContent = ( serverMsg.user + " has joined the room." );
+        pMsg.textContent = ( "[ "+h+":"+m+":"+s+" ]  "+ serverMsg.user + " has joined the room." );
         pUser.setAttribute("id", serverMsg.user );
         showPpl.appendChild( pUser );
         showMsg.appendChild( pMsg );
@@ -50,14 +56,14 @@ function handleSendWsMessageCB( event ) {
         showPpl.removeChild(pDel);
         // show message
         let pMsg = document.createElement("p");
-        pMsg.textContent = ( serverMsg.user + " has left the room." );
+        pMsg.textContent = ( "[ "+h+":"+m+":"+s+" ]  "+ serverMsg.user + " has left the room." );
         showMsg.appendChild( pMsg );
     }
 
     // handle message event
     if( serverMsg.type == "message" ){
         let pMsg = document.createElement("p");
-        pMsg.textContent = ( serverMsg.user + ": " + serverMsg.message );
+        pMsg.textContent = ( "[ "+h+":"+m+":"+s+" ]  "+ serverMsg.user + ": " + serverMsg.message );
         showMsg.appendChild( pMsg );
     }
 
