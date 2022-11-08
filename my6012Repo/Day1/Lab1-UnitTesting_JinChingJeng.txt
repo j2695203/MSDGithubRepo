@@ -1,0 +1,36 @@
+1. Where is the assertEquals method defined? What does it do? Can we use assertEquals for more than just int types? (Hint: Consult the API for JUnit)
+
+JUnit assertEquals is one of the methods in the JUnit Library. It can verify the equality of two objects. It may have integer, floating-point, Boolean values, and other types.
+
+2. Briefly describe what each of the three tests is checking.
+
+emptyArray(): To check if the array is empty.
+allArrayElementsEqual(): To check if all elements in the array are equal.
+smallRandomArrayElements():  To check if the smallest difference between two elements is correct.
+
+3. Why is our unimplemented findSmallestDiff method passing one of the tests?
+
+It always returns 0 in findSmallestDiff, and the answer for allArrayElementsEqual is exactly 0 because the smallest difference for arr2 is 0.
+
+4. Why are we failing the third test? How should our method be modified to correct this?
+
+The difference should take the absolute value.
+
+5. What is the appropriate call to assertEquals for your new test (test 4)?
+
+Skip this question according to Slack.
+
+6. Provide one more test (test 5) for the findSmallestDiff method. Briefly describe your test and write the call to assertEquals here.
+
+I set two elements that are the right answer at both edges to check if the bound of the array is correctly considered.
+
+arr5 = new int[] { 1, 49, -23, -25, 0 };
+
+@Test
+public void test5(){
+    assertEquals(1, DiffUtil.findSmallestDiff(arr4));
+}
+
+7. Briefly describe your unit tests for Assignment 1.
+
+The first is to initialize some testing matrices with different dimensions in the setUp() method. Then write the assert methods, such as assertEquals, assertNull, and so on, to test normal cases and edge cases. 
