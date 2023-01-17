@@ -1,6 +1,6 @@
 function selectionSort( array ){
     for ( let i = 0 ; i < array.length; i++ ){
-        let minIndex = findMinIndex( array, i , compareFirstName ); // input diff compare function
+        let minIndex = findMinIndex( array, i , compareLastName ); // input diff compare function
         let temp = array[i];
         array[i] = array[minIndex];
         array[minIndex] = temp;

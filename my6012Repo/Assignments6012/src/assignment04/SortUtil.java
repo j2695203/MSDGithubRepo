@@ -197,7 +197,7 @@ MERGE SORT: when size < threshold, use insertion sort
      * @param  comparator rules to compare
      *
      */
-    public static <T> void mergeSort3(ArrayList<T> list, Comparator<? super T> comparator){
+    public static <T> void mergesort(ArrayList<T> list, Comparator<? super T> comparator){
         // base case: use insertion sort when small size
         if(list.size() < 2){
             return;
@@ -218,8 +218,8 @@ MERGE SORT: when size < threshold, use insertion sort
             rhs.add(list.get(j));
         }
         // recursive each split array lists until size < threshold
-        mergeSort3(lhs,comparator);
-        mergeSort3(rhs,comparator);
+        mergesort(lhs,comparator);
+        mergesort(rhs,comparator);
         // merge two split array lists into one
         merge3(lhs, rhs, comparator, list);
     }

@@ -20,8 +20,8 @@ class BinarySearchTreeTest_Integer {
     void buildup(){
         integerBST.add(0);
         integerBST.add(20);
-        integerBST.add(20);
-        integerBST.add(-1);
+        integerBST.add(20); // an existed integer
+        integerBST.add(-1); // negative integer
         integerBST.add(1);
     }
 
@@ -35,7 +35,7 @@ class BinarySearchTreeTest_Integer {
     @Test
     void addAll() {
         assertFalse(integerBST.addAll(integersContained)); // not changed if add contained numbers
-        assertTrue(integerBST.addAll(integersPartContained));
+        assertTrue(integerBST.addAll(integersPartContained)); //3, -3, 0
         ArrayList<Integer> expected = new ArrayList<>(Arrays.asList(-3,-1,0,1,3,20));
         assertEquals(expected, integerBST.toArrayList());
     }
@@ -83,7 +83,7 @@ class BinarySearchTreeTest_Integer {
         ArrayList<Integer> expected1 = new ArrayList<>(Arrays.asList(0,1,20));
         assertEquals(expected1, integerBST.toArrayList());
 
-        integerBST.remove(0);
+        integerBST.remove(0); // remove root node
         ArrayList<Integer> expected2 = new ArrayList<>(Arrays.asList(1,20));
         assertEquals(expected2, integerBST.toArrayList());
 

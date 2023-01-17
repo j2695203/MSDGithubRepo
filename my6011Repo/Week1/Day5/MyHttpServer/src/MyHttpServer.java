@@ -11,7 +11,7 @@ public class MyHttpServer {
     // VARIABLES /////////////////////
     private ServerSocket serverSocket;
     private Socket clientSocket;
-    private String path;
+    private String path; // filename
 
     // CONSTRUCTORS /////////////////////
     public MyHttpServer() {
@@ -22,6 +22,7 @@ public class MyHttpServer {
                 clientSocket = serverSocket.accept();
                 HTTPRequest();
                 HTTPResponse();
+                // close here?
             }
         }catch( Exception e){
             System.out.println(e);
@@ -86,7 +87,7 @@ public class MyHttpServer {
 
         // send the response header
         pw.println("HTTP/1.1 " + result);
-        pw.println("Content-type: text/html");
+        pw.println("Content-type: text/html"); // type as variable
         pw.println("Content-Length:" + file.length() );
         pw.println("\n");
 

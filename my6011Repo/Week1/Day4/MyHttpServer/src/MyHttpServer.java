@@ -11,13 +11,15 @@ public class MyHttpServer {
 
     // constructor
     public MyHttpServer() throws IOException {
-        ServerSocket serversocket = new ServerSocket(8080);
+        ServerSocket serverSocket = new ServerSocket(8080);
 
         while (true) {
-            Socket clientsocket = serversocket.accept();
-            System.out.println("Debug: got new client " + clientsocket.toString());
+            Socket clientSocket = serverSocket.accept();
 
-            InputStream inputstream = clientsocket.getInputStream();
+            /*
+             read HTTP request
+             */
+            InputStream inputstream = clientSocket.getInputStream();
             Scanner sc = new Scanner(inputstream);
 
             // only read the 1st line once (not value pair)
@@ -51,25 +53,27 @@ public class MyHttpServer {
                 result = "404 not found";
             }
 
-            // write
-            OutputStream outputstream = clientsocket.getOutputStream();
+            /*
+             write HTTP response
+             */
+            OutputStream outputstream = clientSocket.getOutputStream();
             PrintWriter pw = new PrintWriter(outputstream);
 
             // send the response header
             pw.println("HTTP/1.1 " + result);
-            pw.println("Content-type: text/html");
+            pw.println("Content-type: text/" + path.split(".")[1]);
             pw.println("Content-Length:" + file.length() );
             pw.println("\n");
 
-            // send the data from file
+            // send the data from file ?????trycatch
             Path filepath = Paths.get(path);
             String content = Files.readString(filepath);
             pw.println(content);
-            
 
             pw.flush();
             pw.close();
-            clientsocket.close();
+            sc.close();
+            clientSocket.close();
         }
     }
 

@@ -1,0 +1,53 @@
+# Makefile - builds CS 6015 Project Lab1 part2
+#
+# To build a target, enter:
+# make <target>
+#
+# Targets:
+# printM - print out the values of macros
+# all - remove all from part1 then compile and link files
+# clean - delete derived files such as .o and all
+
+
+OBJS = main.o Caps.o Clothing.o Pants.o
+
+CXXSOURCE = main.cpp Caps.cpp Clothing.cpp Pants.cpp
+
+CXXFLAGS = --std=c++14 -O2
+
+HEADERS = Caps.h Clothing.h Pants.h
+
+CO = -c
+
+LO = -o
+
+printM: 
+	@echo $(CXXSOURCE)
+	@echo $(CXX)
+	@echo $(CXXFLAGS)
+	@echo $(HEADERS)
+	@echo $(CO)
+	@echo $(LO)
+
+all: $(CXXSOURCE) $(HEADERS)
+	rm -f all
+	$(CXX) $(CO) $(CXXSOURCE)
+	$(CXX) $(LO) all $(CXXSOURCE)
+
+
+#all: $(OBJS)
+#	rm -f all
+#	$(CXX) $(OBJS) $(LO) $@
+#
+#main.o: $(HEADERS)
+#
+#Caps.o: $(HEADERS)
+#
+#Clothing.o: $(HEADERS)
+#
+#Pants.o: $(HEADERS)
+#
+
+.PHONY: clean
+clean:
+	rm -f *.o all

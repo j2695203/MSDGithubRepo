@@ -62,7 +62,7 @@ class SortUtilTest {
             }
         };
         // sort the list
-        SortUtil.mergeSort3(data, comparator);
+        SortUtil.mergesort(data, comparator);
         // check if the sorted list is as expected order
         ArrayList<Integer> expected = new ArrayList<>( Arrays.asList(-2,-1,0,1,2) );
         assertEquals(expected,data);
@@ -146,7 +146,7 @@ class SortUtilTest {
             }
         };
         // sort it
-        SortUtil.mergeSort3(data, comparator);
+        SortUtil.mergesort(data, comparator);
         // check if the sorted list is as expected order
         ArrayList<String> expected = new ArrayList<>( Arrays.asList("Please","Me","Give","Break","A") );
         assertEquals(expected,data);
@@ -195,7 +195,7 @@ class SortUtilTest {
             }
         };
         // sort the list
-        SortUtil.mergeSort3(data, comparator);
+        SortUtil.mergesort(data, comparator);
         // check if the sorted list is as expected order
         for( int i = 0; i < data.size() - 1; i++ ){
             assertTrue( comparator.compare(data.get(i+1), data.get(i)) > 0 );

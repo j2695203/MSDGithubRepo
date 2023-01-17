@@ -326,24 +326,21 @@ public class BinarySearchTree<T extends Comparable<? super T>> implements Sorted
      * order.
      */
     @Override
-    public ArrayList toArrayList() {
-        if( isEmpty() ){
-            return null;
-        }
-        ArrayList<T> alItems = new ArrayList<>();
-        return inorderRecursive(root_, alItems);
+    public ArrayList<T> toArrayList() {
+        ArrayList<T> allItems = new ArrayList<>();
+        inorderRecursive(root_, allItems);
+        return allItems;
     }
 
     /**
-     * inorder traversal of BST, and returns an ArrayList containing all of the items in this set, in sorted
-     * order.
+     * inorder traversal of BST, and set all of the items into an ArrayList in sorted order.
      *
      * @param node - the node which the search starts from
      * @param allItems - ArrayList to be set
-     * @return ArrayList containing all of the items in this set, in sorted order.
+     *
      */
-    private ArrayList<T> inorderRecursive(Node node, ArrayList<T> allItems){
-        // if there's node
+    private void inorderRecursive(Node node, ArrayList<T> allItems){
+        // if there's a node
         if( node != null ){
             // keep searching for the leftest child of this node
             inorderRecursive(node.left_, allItems);
@@ -352,7 +349,6 @@ public class BinarySearchTree<T extends Comparable<? super T>> implements Sorted
             // keep searching for the rightest child of this node
             inorderRecursive(node.right_, allItems);
         }
-        return allItems;
     }
 
     /**

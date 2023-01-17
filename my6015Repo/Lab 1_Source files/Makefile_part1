@@ -1,0 +1,29 @@
+# Makefile - builds CS 6015 Project Lab1
+#
+# To build a target, enter:
+# make <target>
+#
+# Targets:
+# all: build everything
+# docName.o: build documentation
+# clean: delete derived files such as .o
+
+
+all: main.o Caps.o Clothing.o Pants.o  
+	c++ $^ -o $@
+
+main.o: main.cpp
+	c++ -c main.cpp
+
+
+Caps.o: Caps.cpp Caps.h
+	c++ -c Caps.cpp
+
+Clothing.o: Clothing.cpp Clothing.h
+	c++ -c Clothing.cpp
+
+Pants.o: Pants.cpp Pants.h
+	c++ -c Pants.cpp
+
+clean:
+	rm -f *.o all

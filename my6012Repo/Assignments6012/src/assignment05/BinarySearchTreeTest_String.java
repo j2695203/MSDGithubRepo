@@ -12,9 +12,9 @@ class BinarySearchTreeTest_String{
 
     BinarySearchTree<String> BST = new BinarySearchTree<>();
 
-    ArrayList<String> stringsContained = new ArrayList<>(Arrays.asList("bird","zebra","z"));
-    ArrayList<String> stringsPartContained = new ArrayList<>(Arrays.asList("Zebra","panda","tiger"));
-    ArrayList<String> stringsNotContained = new ArrayList<>(Arrays.asList("Dog","octopus","whale"));
+    ArrayList<String> stringsContained = new ArrayList<>(Arrays.asList("bird","zebra","z")); // all strings are contained in BST
+    ArrayList<String> stringsPartContained = new ArrayList<>(Arrays.asList("Zebra","panda","tiger")); // part of strings are contained in BST
+    ArrayList<String> stringsNotContained = new ArrayList<>(Arrays.asList("Dog","octopus","whale")); // all strings are not contained in BST
 
     @BeforeEach
     void buildup(){
@@ -31,7 +31,7 @@ class BinarySearchTreeTest_String{
     void add() {
         BST.add("Monkey");
         BST.add("!");
-        ArrayList<String> expected = new ArrayList<>(Arrays.asList("!","1","Monkey","Zebra","bird","dog","z","zebra"));
+        ArrayList<String> expected = new ArrayList<>(Arrays.asList("!","1","Monkey","Zebra","bird","dog","z","zebra")); // based on ASCII
         assertEquals(expected, BST.toArrayList());
     }
 
@@ -90,7 +90,7 @@ class BinarySearchTreeTest_String{
         ArrayList<String> expected2 = new ArrayList<>(Arrays.asList("Zebra","dog","z","zebra"));
         assertEquals(expected2, BST.toArrayList());
 
-        BST.remove("dog"); // root node
+        BST.remove("dog"); // remove root node
         ArrayList<String> expected3 = new ArrayList<>(Arrays.asList("Zebra","z","zebra"));
         assertEquals(expected3, BST.toArrayList());
 
