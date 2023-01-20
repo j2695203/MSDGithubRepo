@@ -6,9 +6,17 @@
 //
 
 #include <iostream>
+#include "expr.hpp"
+#include "cmdline.hpp"
+#include <cassert>
+
+#include "catch.h"
+
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
-    return 0;
+    
+    use_arguments(argc, argv);
+    
+    return 0;;
+    
 }
