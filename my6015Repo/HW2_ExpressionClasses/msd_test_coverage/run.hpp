@@ -10,4 +10,6 @@
 
 #include <stdio.h>
 
+extern bool run_tests(void);
+
 #endif /* run_hpp */
