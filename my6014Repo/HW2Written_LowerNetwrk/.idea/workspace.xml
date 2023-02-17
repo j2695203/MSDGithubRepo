@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c9cb807c-796b-4016-b25f-2e154aa99b91" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../my6013Repo/HW2_UnixShell/6013HW2_UnixShell/6013HW2_UnixShell.xcodeproj/project.pbxproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../my6013Repo/HW2_UnixShell/6013HW2_UnixShell/6013HW2_UnixShell.xcodeproj/project.xcworkspace/contents.xcworkspacedata" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../my6013Repo/HW2_UnixShell/6013HW2_UnixShell/6013HW2_UnixShell.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../my6013Repo/HW2_UnixShell/6013HW2_UnixShell/6013HW2_UnixShell.xcodeproj/project.xcworkspace/xcuserdata/jinny.xcuserdatad/UserInterfaceState.xcuserstate" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../my6013Repo/HW2_UnixShell/6013HW2_UnixShell/6013HW2_UnixShell.xcodeproj/xcuserdata/jinny.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../my6013Repo/HW2_UnixShell/6013HW2_UnixShell/6013HW2_UnixShell/main.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../my6013Repo/HW2_UnixShell/shelpers.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../my6013Repo/HW2_UnixShell/shelpers.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../my6015Repo/HW2_ExpressionClasses/HW2_ExpressionClasses.xcodeproj/xcshareddata/xcschemes/HW2_ExpressionClasses.xcscheme" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../my6015Repo/HW2_ExpressionClasses/HW2_ExpressionClasses.xcodeproj/xcshareddata/xcschemes/msd_test_coverage.xcscheme" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../my6015Repo/HW2_ExpressionClasses/HW2_ExpressionClasses.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/../../my6015Repo/HW2_ExpressionClasses/HW2_ExpressionClasses.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../my6015Repo/HW2_ExpressionClasses/HW2_ExpressionClasses.xcodeproj/project.xcworkspace/xcuserdata/jinny.xcuserdatad/UserInterfaceState.xcuserstate" beforeDir="false" afterPath="$PROJECT_DIR$/../../my6015Repo/HW2_ExpressionClasses/HW2_ExpressionClasses.xcodeproj/project.xcworkspace/xcuserdata/jinny.xcuserdatad/UserInterfaceState.xcuserstate" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../my6015Repo/HW2_ExpressionClasses/HW2_ExpressionClasses.xcodeproj/xcuserdata/jinny.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" afterPath="$PROJECT_DIR$/../../my6015Repo/HW2_ExpressionClasses/HW2_ExpressionClasses.xcodeproj/xcuserdata/jinny.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../my6015Repo/HW2_ExpressionClasses/msd_test_coverage/msd_test_coverage.m" beforeDir="false" afterPath="$PROJECT_DIR$/../../my6015Repo/HW2_ExpressionClasses/msd_test_coverage/msd_test_coverage.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../my6015Repo/HW2_ExpressionClasses/msd_test_coverage/run.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../my6015Repo/HW2_ExpressionClasses/msd_test_coverage/run.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../my6015Repo/HW2_ExpressionClasses/msd_test_coverage/run.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../my6015Repo/HW2_ExpressionClasses/msd_test_coverage/run.hpp" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2LnJGrBoa5IAfPdENhi7NAUPl3l" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c9cb807c-796b-4016-b25f-2e154aa99b91" name="Changes" comment="" />
+      <created>1676500821227</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1676500821227</updated>
+      <workItem from="1676500823200" duration="38000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
