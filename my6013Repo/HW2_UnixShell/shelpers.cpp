@@ -1,4 +1,5 @@
 #include "shelpers.hpp"
+#include <fcntl.h>
 
 /*
   text handling functions
@@ -14,7 +15,7 @@ bool splitOnSymbol(std::vector<std::string>& words, int i, char c){
 	  words[i] = words[i].substr(0,1);
 	} else {
 	  //symbol in middle or end
-	  words.insert(words.begin() + i + 1, std::string{c});
+	  words.insert(words.begin() + i + 1, std::string(1,c));
 	  std::string after = words[i].substr(pos + 1, words[i].size() - pos - 1);
 	  if(!after.empty()){
 		words.insert(words.begin() + i + 2, after);
@@ -25,7 +26,6 @@ bool splitOnSymbol(std::vector<std::string>& words, int i, char c){
   } else {
 	return false;
   }
-
 }
 
 std::vector<std::string> tokenize(const std::string& s){
@@ -48,16 +48,15 @@ std::vector<std::string> tokenize(const std::string& s){
   }
 
   for(int i = 0; i < ret.size(); ++i){
-	for(auto c : {'&', '<', '>', '|'}){
+      char ch[] =  {'&', '<', '>', '|'};
+	for(auto c :ch){
 	  if(splitOnSymbol(ret, i, c)){
 		--i;
 		break;
 	  }
 	}
   }
-  
   return ret;
-  
 }
 
 
@@ -68,59 +67,73 @@ std::ostream& operator<<(std::ostream& outs, const Command& c){
   return outs;
 }
 
-//returns an empty vector on error
-/*
 
-  You'll need to fill in a few gaps in this function and add appropriate error handling
-  at the end.
-
- */
 std::vector<Command> getCommands(const std::vector<std::string>& tokens){
   std::vector<Command> ret(std::count(tokens.begin(), tokens.end(), "|") + 1);  //1 + num |'s commands
 
   int first = 0;
   int last = std::find(tokens.begin(), tokens.end(), "|") - tokens.begin();
   bool error = false;
+
   for(int i = 0; i < ret.size(); ++i){
+
+    // first character can't be symbols
 	if((tokens[first] == "&") || (tokens[first] == "<") ||
 		(tokens[first] == ">") || (tokens[first] == "|")){
 	  error = true;
 	  break;
 	}
 
+    // initialize each command ( ret[i] )
 	ret[i].exec = tokens[first];
 	ret[i].argv.push_back(tokens[first].c_str()); //argv0 = program name
 	std::cout << "exec start: " << ret[i].exec << std::endl;
 	ret[i].fdStdin = 0;
 	ret[i].fdStdout = 1;
 	ret[i].background = false;
-	
+
+    // set command contents
 	for(int j = first + 1; j < last; ++j){
-	  if(tokens[j] == ">" || tokens[j] == "<" ){
-		//I/O redirection
-		/*
-		  Eventually you'll need to fill this in to support I/O Redirection
-		  Note, that only the FIRST command can take input redirection
-		  (all others get input from a pipe)
-		  Only the LAST command can have output redirection!
-		 */
-		assert(false);
-		
-	  } else if(tokens[j] == "&"){
-		//Fill this in if you choose to do the optional "background command" part
-		assert(false);
-	  } else {
-		//otherwise this is a normal command line argument!
+
+	  if( tokens[j] == ">" || tokens[j] == "<" ){ // I/O redirection
+
+        if( tokens[j] == ">" ){ // write
+            ret[i].fdStdout = open(tokens[j+1].c_str(), O_WRONLY|O_CREAT|O_TRUNC, 0777);
+            break;
+        }else{ // read
+            ret[i].fdStdin = open(tokens[j+1].c_str(), O_RDONLY);
+        }
+        // syscall error check: open()
+        if( ret[i].fdStdout == -1 || ret[i].fdStdin == -1 ){
+            perror("open() failed \n");
+            error = true;
+            break;
+        }
+
+      } else if( tokens[j] == "&" ){ // background
+		ret[i].background = true;
+
+	  } else { // otherwise this is a normal command line argument!
 		ret[i].argv.push_back(tokens[j].c_str());
 	  }
-	  
 	}
+
+    // set pipe if there are multiple commands
 	if(i > 0){
-	  /* there are multiple commands.  Open open a pipe and
-		 Connect the ends to the fds for the commands!
-	  */
-	  assert(false);
+        // open a pipe
+        int fd[2];
+        // syscall error check: pipe()
+        if( pipe(fd) != 0 ){
+            perror("pipe() failed \n");
+            error = true;
+            break;
+        }
+
+        // Connect the ends to the fds for the commands (pipe)
+        ret[i].fdStdin = fd[0];
+        ret[i-1].fdStdout = fd[1];
 	}
+
 	//exec wants argv to have a nullptr at the end!
 	ret[i].argv.push_back(nullptr);
 
@@ -131,12 +144,21 @@ std::vector<Command> getCommands(const std::vector<std::string>& tokens){
 	}
   }
 
+  // close any file descriptors you opened in this function!
   if(error){
-	//close any file descriptors you opened in this function!
-
-	assert(false);
-	
+    for(Command cmd : ret){
+        if( cmd.fdStdin != 0 ){
+            if( close(cmd.fdStdin) == -1 ){ // syscall error check
+                perror("close() failed \n");
+            }
+        }
+        if( cmd.fdStdout != 1 ){
+            if( close(cmd.fdStdout) == -1 ){ // syscall error check
+                perror("close() failed \n");
+            }
+        }
+    }
+    ret.clear(); // returns an empty vector on error
   }
-  
   return ret;
 }

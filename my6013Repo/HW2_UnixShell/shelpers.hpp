@@ -19,7 +19,7 @@ struct Command{
   std::string exec; //the name of the executable
   //remember argv[0] should be the name of the program (same as exec)
   //Also, argv should end with a nullptr!
-  std::vector<const char*> argv; 
+  std::vector<const char*> argv;
   int fdStdin, fdStdout;
   bool background;
 };
