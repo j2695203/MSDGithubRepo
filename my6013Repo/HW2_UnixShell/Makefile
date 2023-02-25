@@ -18,7 +18,7 @@ all: myShell
 
 myShell: $(CXXSOURCE) $(HEADERS)
 	$(CXX) $(CXXFLAGS) -c $(CXXSOURCE)
-	$(CXX) $(CXXFLAGS) -o myShell $(CXXSOURCE)
+	$(CXX) $(CXXFLAGS) -o myShell $(CXXSOURCE) -lreadline
 
 
 .PHONY: clean

@@ -2,15 +2,16 @@
 #include <stdio.h>
 #include <unistd.h>
 #include "shelpers.hpp"
+#include <readline/readline.h>
 
 int main(int argc, const char *argv[]){
 
     std::string userInput;
     std::vector<int> backgrounds_pid;
 
-    std::cout << "@MyShell > ";
+    while( true ){  // instead of ( getline(std::cin, userInput ) because of readline
 
-    while( getline(std::cin, userInput ) ){
+        userInput = readline("@MyShell > ");
 
         std::vector<std::string> tokenInput = tokenize(userInput);
         std::vector<Command> commands = getCommands(tokenInput);
@@ -34,6 +35,12 @@ int main(int argc, const char *argv[]){
                     }
                 }
                 continue; // don't execute "cd" in child
+            }
+
+            // set environment variables if it's builtin "XX=YY"
+            if( commands[i].setEnv ){
+
+                continue; // don't execute builtin in child
             }
 
             // create fork
@@ -116,9 +123,6 @@ int main(int argc, const char *argv[]){
             }
 
         }
-        std::cout << "@MyShell > ";
     }
-
     return 0;
-
 }

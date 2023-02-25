@@ -48,7 +48,7 @@ std::vector<std::string> tokenize(const std::string& s){
   }
 
   for(int i = 0; i < ret.size(); ++i){
-      char ch[] =  {'&', '<', '>', '|'};
+      char ch[] =  {'&', '<', '>', '|', '='};
 	for(auto c :ch){
 	  if(splitOnSymbol(ret, i, c)){
 		--i;
@@ -91,6 +91,7 @@ std::vector<Command> getCommands(const std::vector<std::string>& tokens){
 	ret[i].fdStdin = 0;
 	ret[i].fdStdout = 1;
 	ret[i].background = false;
+    ret[i].setEnv = false;
 
     // set command contents
 	for(int j = first + 1; j < last; ++j){
@@ -110,11 +111,26 @@ std::vector<Command> getCommands(const std::vector<std::string>& tokens){
             break;
         }
 
-      } else if( tokens[j] == "&" ){ // background
+      } else if( tokens[j] == "&" ){ // builtin: background
 		ret[i].background = true;
 
-	  } else { // otherwise this is a normal command line argument!
-		ret[i].argv.push_back(tokens[j].c_str());
+      } else if( tokens[j] == "=" ){ // builtin: environment variables
+          ret[i].setEnv = true;
+          // set environment variable
+          if( setenv(tokens[j-1].c_str(), tokens[j+1].c_str(), 0) == -1 ){ // syscall error check
+              perror("setenv() failed \n");
+              error = true;
+              break;
+          }
+          continue;
+
+      } else if( tokens[j].find("$") != std::string::npos ){ // builtin: environment variables (if contains $)
+          // get environment variable
+          char* ev = getenv(tokens[j].substr(1,std::string::npos).c_str()); // no error for this syscall (only NULL if there is no match)
+          ret[i].argv.push_back(ev);
+
+      } else { // otherwise this is a normal command line argument!
+          ret[i].argv.push_back(tokens[j].c_str());
 	  }
 	}
 

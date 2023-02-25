@@ -22,6 +22,7 @@ struct Command{
   std::vector<const char*> argv;
   int fdStdin, fdStdout;
   bool background;
+  bool setEnv;
 };
 //useful for debugging (implemented for you)
 std::ostream& operator<<(std::ostream& outs, const Command& c);
