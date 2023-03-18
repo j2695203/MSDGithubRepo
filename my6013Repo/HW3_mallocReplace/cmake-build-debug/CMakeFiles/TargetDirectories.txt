@@ -1,0 +1,3 @@
+/Users/jinny/MSD/myGithubRepo/my6013Repo/HW3_mallocReplace/cmake-build-debug/CMakeFiles/HW3_mallocReplace.dir
+/Users/jinny/MSD/myGithubRepo/my6013Repo/HW3_mallocReplace/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/jinny/MSD/myGithubRepo/my6013Repo/HW3_mallocReplace/cmake-build-debug/CMakeFiles/rebuild_cache.dir
