@@ -2,22 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d39a07f0-bff3-43e7-805c-fcddc46c018d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../../../my6013Repo/HW2_UnixShell/6013HW2_UnixShell/6013HW2_UnixShell.xcodeproj/project.pbxproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../my6013Repo/HW2_UnixShell/6013HW2_UnixShell/6013HW2_UnixShell.xcodeproj/project.xcworkspace/contents.xcworkspacedata" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../my6013Repo/HW2_UnixShell/6013HW2_UnixShell/6013HW2_UnixShell.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../my6013Repo/HW2_UnixShell/6013HW2_UnixShell/6013HW2_UnixShell.xcodeproj/project.xcworkspace/xcuserdata/jinny.xcuserdatad/UserInterfaceState.xcuserstate" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../my6013Repo/HW2_UnixShell/6013HW2_UnixShell/6013HW2_UnixShell.xcodeproj/xcuserdata/jinny.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../my6013Repo/HW2_UnixShell/6013HW2_UnixShell/6013HW2_UnixShell/main.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../my6013Repo/HW2_UnixShell/shelpers.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../my6013Repo/HW2_UnixShell/shelpers.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../my6015Repo/HW2_ExpressionClasses/HW2_ExpressionClasses.xcodeproj/xcshareddata/xcschemes/HW2_ExpressionClasses.xcscheme" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../my6015Repo/HW2_ExpressionClasses/HW2_ExpressionClasses.xcodeproj/xcshareddata/xcschemes/msd_test_coverage.xcscheme" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../my6015Repo/HW2_ExpressionClasses/HW2_ExpressionClasses.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/../../../my6015Repo/HW2_ExpressionClasses/HW2_ExpressionClasses.xcodeproj/project.pbxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../my6015Repo/HW2_ExpressionClasses/HW2_ExpressionClasses.xcodeproj/project.xcworkspace/xcuserdata/jinny.xcuserdatad/UserInterfaceState.xcuserstate" beforeDir="false" afterPath="$PROJECT_DIR$/../../../my6015Repo/HW2_ExpressionClasses/HW2_ExpressionClasses.xcodeproj/project.xcworkspace/xcuserdata/jinny.xcuserdatad/UserInterfaceState.xcuserstate" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../my6015Repo/HW2_ExpressionClasses/HW2_ExpressionClasses.xcodeproj/xcuserdata/jinny.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" afterPath="$PROJECT_DIR$/../../../my6015Repo/HW2_ExpressionClasses/HW2_ExpressionClasses.xcodeproj/xcuserdata/jinny.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../my6015Repo/HW2_ExpressionClasses/msd_test_coverage/msd_test_coverage.m" beforeDir="false" afterPath="$PROJECT_DIR$/../../../my6015Repo/HW2_ExpressionClasses/msd_test_coverage/msd_test_coverage.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../my6015Repo/HW2_ExpressionClasses/msd_test_coverage/run.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../my6015Repo/HW2_ExpressionClasses/msd_test_coverage/run.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../my6015Repo/HW2_ExpressionClasses/msd_test_coverage/run.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../my6015Repo/HW2_ExpressionClasses/msd_test_coverage/run.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,13 +21,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -52,6 +37,9 @@
       <option name="presentableId" value="Default" />
       <updated>1676500912283</updated>
       <workItem from="1676500916025" duration="34416000" />
+      <workItem from="1676655154018" duration="424000" />
+      <workItem from="1676659707673" duration="1197000" />
+      <workItem from="1676961218224" duration="654000" />
     </task>
     <servers />
   </component>
